@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Spinzy - Spin and Wheel",
+        "logo": "spinzy_logo.png",
+        "android_url": "https://play.google.com/store/apps/details?id=com.example.spinzy",
+        "ios_url": "https://apps.apple.com/app/spinzy-spin-and-wheel/id000000000"
+    },
+    {
+        "name": "Abillion Trade Analytics",
+        "logo": "abillion_logo.png",
+        "android_url": "https://play.google.com/store/apps/details?id=com.app.abillion",
+        "ios_url": "https://apps.apple.com/us/app/abillion-stock-analyzer-app/id6464286930"
+    },
+    {
+        "name": "DoneZo: To Do List & Calendar",
+        "logo": "donezo_logo.png",
+        "android_url": "https://play.google.com/store/apps/details?id=com.atharvasystem.todo",
+        "ios_url": "https://apps.apple.com/app/donezo-todo-calendar/id000000002"
+    },
+    {
+        "name": "IPTV - Smart M3U Player",
+        "logo": "iptv_logo.png",
+        "android_url": "https://play.google.com/store/apps/details?id=com.app.mobileiptv",
+        "ios_url": "https://apps.apple.com/app/iptv-smart-m3u-player/id000000005"
+    },
+    {
+        "name": "Mosho Cart",
+        "logo": "mosho_cart_alt_logo.png",
+        "android_url": "https://play.google.com/store/apps/details?id=com.mshop.atharvasystem",
+        "ios_url": "https://apps.apple.com/in/app/mosho-cart/id1640443975"
+    },
+    {
+        "name": "Mosho Cart Odoo",
+        "logo": "mosho_cart_odoo_logo.png",
+        "android_url": "https://play.google.com/store/apps/details?id=com.atharvaSystem.odooapp",
+        "ios_url": "https://apps.apple.com/app/mosho-cart-odoo/id000000010"
+    },
+    {
+        "name": "Notes.U: ColorNote taking, PDF",
+        "logo": "notesu_logo.png",
+        "android_url": "https://play.google.com/store/apps/details?id=com.atharva.notesu",
+        "ios_url": "https://apps.apple.com/app/notes-u-colornote-pdf/id000000011"
+    },
+    {
+        "name": "Screen Recorder - Live Stream!",
+        "logo": "screen_recorder_logo.png",
+        "android_url": "https://play.google.com/store/apps/details?id=com.atharvasystem.quickscreenrecorder",
+        "ios_url": "https://apps.apple.com/app/screen-recorder-live-stream/id000000012"
+    },
+    {
+        "name": "Talkify: Text To Speech, Audio",
+        "logo": "talkify_logo.png",
+        "android_url": "https://play.google.com/store/apps/details?id=com.asapp.texttospeech",
+        "ios_url": "https://apps.apple.com/app/talkify-text-to-speech-audio/id000000013"
+    },
+    {
+        "name": "Your Money Manager - Spendable",
+        "logo": "money_manager_logo.png",
+        "android_url": "https://play.google.com/store/apps/details?id=com.atharva.expensetracker",
+        "ios_url": "https://apps.apple.com/app/your-money-manager-spendable/id000000014"
+    }
+]
