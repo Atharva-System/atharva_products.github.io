@@ -9,54 +9,54 @@
         "name": "Abillion Trade Analytics",
         "logo": "assets/logo_abillion.png",
         "android_url": "https://play.google.com/store/apps/details?id=com.app.abillion",
-        "ios_url": "https://apps.apple.com/us/app/abillion-stock-analyzer-app/id6464286930"
+        "ios_url": "https://apps.apple.com/app/abillion-trade-analytics/id6464286930"
     },
     {
         "name": "DoneZo: To Do List & Calendar",
         "logo": "assets/logo_donezo.png",
         "android_url": "https://play.google.com/store/apps/details?id=com.atharvasystem.todo",
-        "ios_url": "https://apps.apple.com/app/donezo-todo-calendar/id000000002"
+        "ios_url": "https://apps.apple.com/us/app/donezo-to-do-list-calendar/id6738828343"
     },
     {
         "name": "IPTV - Smart M3U Player",
         "logo": "assets/logo_iptv.png",
         "android_url": "https://play.google.com/store/apps/details?id=com.app.mobileiptv",
-        "ios_url": "https://apps.apple.com/app/iptv-smart-m3u-player/id000000005"
+        "ios_url": "https://apps.apple.com/app/iptv-your-mobile-tv/id6504405496"
     },
     {
         "name": "Mosho Cart",
         "logo": "assets/logo_mosho_cart.png",
         "android_url": "https://play.google.com/store/apps/details?id=com.mshop.atharvasystem",
-        "ios_url": "https://apps.apple.com/in/app/mosho-cart/id1640443975"
+        "ios_url": "https://apps.apple.com/app/mosho-cart/id1640443975"
     },
     {
         "name": "Mosho Cart Odoo",
         "logo": "assets/logo_mosho_cart_odoo.png",
         "android_url": "https://play.google.com/store/apps/details?id=com.atharvaSystem.odooapp",
-        "ios_url": "https://apps.apple.com/app/mosho-cart-odoo/id000000010"
+        "ios_url": "https://apps.apple.com/us/app/mosho-cart-odoo/id6470815365"
     },
     {
         "name": "Notes.U: ColorNote taking, PDF",
         "logo": "assets/logo_notesu.png",
         "android_url": "https://play.google.com/store/apps/details?id=com.atharva.notesu",
-        "ios_url": "https://apps.apple.com/app/notes-u-colornote-pdf/id000000011"
+        "ios_url": "https://apps.apple.com/app/colored-note-taking-app-notesu/id6740911306"
     },
     {
         "name": "Screen Recorder - Live Stream!",
         "logo": "assets/logo_live_now.png",
         "android_url": "https://play.google.com/store/apps/details?id=com.atharvasystem.quickscreenrecorder",
-        "ios_url": "https://apps.apple.com/app/screen-recorder-live-stream/id000000012"
+        "ios_url": "https://apps.apple.com/app/screen-recorder-live-stream/id6467652071"
     },
     {
         "name": "Talkify: Text To Speech, Audio",
         "logo": "assets/logo_talkify.png",
         "android_url": "https://play.google.com/store/apps/details?id=com.asapp.texttospeech",
-        "ios_url": "https://apps.apple.com/app/talkify-text-to-speech-audio/id000000013"
+        "ios_url": "https://apps.apple.com/app/talkify-text-to-speech/id6502435546"
     },
     {
         "name": "Your Money Manager - Spendable",
         "logo": "assets/logo_spendable.png",
         "android_url": "https://play.google.com/store/apps/details?id=com.atharva.expensetracker",
-        "ios_url": "https://apps.apple.com/app/your-money-manager-spendable/id000000014"
+        "ios_url": "https://apps.apple.com/app/id6449970262"
     }
 ]
