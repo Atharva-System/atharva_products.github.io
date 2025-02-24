@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Apps</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .app {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .app img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .app a {
+            display: block;
+            margin-top: 5px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer-links a {
+            display: block;
+            margin: 10px 0;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer-links a:hover, .app a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        async function loadApps() {
+            const response = await fetch('apps.json');
+            const apps = await response.json();
+            const appContainer = document.getElementById('app-list');
+            apps.forEach(app => {
+                const appElement = document.createElement('div');
+                appElement.classList.add('app');
+                appElement.innerHTML = `
+                    <img src="${app.logo}" alt="${app.name} Logo">
+                    <h3>${app.name}</h3>
+                    <a href="${app.android_url}" target="_blank">Download for Android</a>
+                    <a href="${app.ios_url}" target="_blank">Download for iOS</a>
+                `;
+                appContainer.appendChild(appElement);
+            });
+        }
+        window.onload = loadApps;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Company Logo" class="logo">
+        <h1>Our Apps</h1>
+        <hr>
+        <h3>Atharva System</h3>
+        <p>We have developed apps to serve different needs.</p>
+        <div id="app-list"></div>
+        <div class="footer-links">
+            <a href="https://www.atharvasystem.com/privacy-policy">Privacy Policy</a>
+            <a href="https://www.atharvasystem.com/privacy-policy">Terms and Conditions</a>
+            <a href="https://www.atharvasystem.com/contact">Contact Us</a>
+        </div>
+    </div>
+</body>
+</html>
