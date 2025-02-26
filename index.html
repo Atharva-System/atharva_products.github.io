@@ -29,8 +29,10 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
             const isAndroid = /android/i.test(userAgent);
-            const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+            const isIOS = /iPhone|iPod/.test(userAgent) || 
+                  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
             document.querySelectorAll(".app-card").forEach(function (card) {
                 let playStoreLink = card.getAttribute("href"); // Default Android link
@@ -57,7 +59,7 @@
                 }
 
                 // Set appropriate link
-                card.setAttribute("href", isIOS ? appStoreLink : playStoreLink);
+                card.setAttribute("href", isIOS || isSafari ? appStoreLink : playStoreLink);
             });
         });
     </script>
