@@ -26,7 +26,7 @@
         })()
         //]]></script>
 
-    <script>
+<!--     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
             const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
@@ -64,8 +64,46 @@
                 card.setAttribute("href", isIOS || isSafari ? appStoreLink : playStoreLink);
             });
         });
-    </script>
+    </script> -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const isSafari = /safari/.test(userAgent) && 
+                        !/chrome|crios|fxios|edg|opera|opr|android/.test(userAgent);
+        const isIOS = /iphone|ipod|ipad/.test(userAgent) || 
+                     (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
+        console.log("Browser Detection - Safari:", isSafari, "iOS:", isIOS); // Debug line
+
+        document.querySelectorAll(".app-card").forEach(function (card) {
+            const playStoreLink = card.getAttribute("href");
+            let appStoreLink = playStoreLink; // Default fallback
+
+            const iosLinks = {
+                    "com.app.abillion": "https://apps.apple.com/app/abillion-trade-analytics/id6464286930",
+                    "com.atharvasystem.todo": "https://apps.apple.com/us/app/donezo-to-do-list-calendar/id6738828343",
+                    "com.atharva.notesu": "https://apps.apple.com/app/colored-note-taking-app-notesu/id6740911306",
+                    "com.atharva.expensetracker": "https://apps.apple.com/app/id6449970262",
+                    "com.atharvaSystem.odooapp": "https://apps.apple.com/us/app/mosho-cart-odoo/id6470815365",
+                    "com.moshocart.atharvasystem": "https://apps.apple.com/app/mosho-cart/id1640443975",
+                    "com.atharvasystem.quickscreenrecorder": "https://apps.apple.com/app/screen-recorder-live-stream/id6467652071",
+                    "com.asapp.texttospeech": "https://apps.apple.com/app/talkify-text-to-speech/id6502435546",
+                    "com.app.mobileiptv": "https://apps.apple.com/app/iptv-your-mobile-tv/id6504405496",
+                    "com.atharvasystem.spinwheel": "https://apps.apple.com/us/app/spin-wheel-app/id6742394794",
+                    "com.app.turthordare": "https://apps.apple.com/us/app/truth-or-dare-party-games/id6746148496",
+                };
+
+            // More robust package name extraction
+            const packageName = (playStoreLink.match(/id=([a-zA-Z0-9._]+)/) || [])[1];
+            if (packageName && iosLinks[packageName]) {
+                appStoreLink = iosLinks[packageName];
+                console.log("Redirecting to App Store:", appStoreLink); // Debug
+            }
+
+            card.setAttribute("href", (isIOS || isSafari) ? appStoreLink : playStoreLink);
+        });
+    });
+</script>
     <header class="header">
         <div class="header-content">
             <img src="assets/atharva-logo.svg" alt="Atharva System">
