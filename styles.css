@@ -106,8 +106,8 @@ body {
     height: 76px;
     margin-bottom: 0;
     position: absolute;
-    left: -10px;
-    right: -10px;
+    left: 0;
+    right: 0;
     bottom: 0;
     width: calc(100vw + 20px);
     @media only screen and (max-width: 767px) {
