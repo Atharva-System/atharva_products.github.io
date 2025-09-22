@@ -109,7 +109,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    width: calc(100vw + 20px);
+    width: calc(100vw);
     @media only screen and (max-width: 767px) {
         display: block;
     }
