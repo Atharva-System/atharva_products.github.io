@@ -1,225 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Atharva Apps</title>
     <link rel="stylesheet" href="styles.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <script id="__bs_script__">
-      (function () {
-        try {
-          var script = document.createElement("script");
-          if ("async") {
-            script.async = true;
-          }
-          script.src = "/browser-sync/browser-sync-client.js?v=2.28.1".replace(
-            "HOST",
-            location.hostname
-          );
-          if (document.body) {
-            document.body.appendChild(script);
-          }
-        } catch (e) {
-          console.error("Browsersync: could not append script tag", e);
-        }
-      })();
+        (function () {
+            try {
+                var script = document.createElement("script");
+                if ("async") {
+                    script.async = true;
+                }
+                script.src = "/browser-sync/browser-sync-client.js?v=2.28.1".replace(
+                    "HOST",
+                    location.hostname
+                );
+                if (document.body) {
+                    document.body.appendChild(script);
+                }
+            } catch (e) {
+                console.error("Browsersync: could not append script tag", e);
+            }
+        })();
     </script>
     <script>
-      const apps = [
-        {
-          pkg: "com.atharva.expensetracker",
-          title: "Your Money Manager – Spendable",
-          img: "assets/spendable.svg",
-          rating: "4.7",
-        },
-        {
-          pkg: "com.atharvasystem.quickscreenrecorder",
-          title: "Qveedo - Screen Recorder App",
-          img: "assets/screen-recorder.svg",
-          rating: "4.4",
-        },
-        {
-          pkg: "com.app.abillion",
-          title: "Abillion Trade Analytics",
-          img: "assets/abillion-trade.svg",
-          rating: "5.0",
-        },
-        {
-          pkg: "com.app.theiptv",
-          title: "IPTV - Smart M3U Player",
-          img: "assets/iptv.svg",
-          rating: "4.6",
-        },
-        {
-          pkg: "com.asapp.texttospeech",
-          title: "Talkify: Text To Speech, Audio",
-          img: "assets/talkify.svg",
-          rating: "5.0",
-        },
-        {
-          pkg: "com.atharvasystem.todo",
-          title: "DoneZo: To Do List & Calendar",
-          img: "assets/donezo.svg",
-          rating: "5.0",
-        },
-        {
-          pkg: "com.atharva.notesu",
-          title: "Notes.U: ColorNote taking, PDF",
-          img: "assets/notes-u.svg",
-          rating: "4.3",
-        },
-        {
-          pkg: "com.atharvasystem.spinwheel",
-          title: "Spin A Wheel: Raffle Generator",
-          img: "assets/spin_wheel.svg",
-          rating: "5.0",
-        },
-        {
-          pkg: "com.app.turthordare",
-          title: "Truth Or Dare: Spin The Bottle",
-          img: "assets/truth-dare.svg",
-          rating: "4.5",
-        },
-        {
-          pkg: "com.moshocart.atharvasystem",
-          title: "Mosho Cart",
-          img: "assets/mosho-cart.svg",
-          rating: "5.0",
-        },
-        {
-          pkg: "com.atharvaSystem.odooapp",
-          title: "Mosho Cart Odoo",
-          img: "assets/mosho-cart-odoo.svg",
-          rating: null,
-        },
-        {
-          pkg: "com.atharva.textStory",
-          title: "Fake Text Message & Story App",
-          img: "assets/text-story.svg",
-          rating: "4.3",
-        },
-        {
-          pkg: "com.asapp.imageconverter",
-          title: "Image Converter: PNG.JPG.HEIC",
-          img: "assets/image-converter.svg",
-          rating: "",
-        },
-      ];
+        const apps = [
+            {
+                pkg: "com.app.turthordare",
+                title: "Truth Or Dare: Spin The Bottle",
+                img: "assets/truth-dare.svg",
+                rating: "4.5",
+                androidUrl:
+                    "https://play.google.com/store/apps/details?id=com.app.turthordare",
+                iosUrl:
+                    "https://apps.apple.com/in/app/truth-or-dare-party-games/id6746148496",
+                defaultUrl:
+                    "https://play.google.com/store/apps/details?id=com.app.turthordare",
+            },
+            {
+                pkg: "com.app.turthordarepro",
+                title: "Truth Or Dare - Spicy Games",
+                img: "assets/truth-dare-pro.svg",
+                rating: "",
+                androidUrl:
+                    "https://play.google.com/store/apps/details?id=com.app.turthordare.pro",
+                iosUrl:
+                    "https://apps.apple.com/us/app/truth-or-dare-spicy-games/id6754761517",
+                defaultUrl:
+                    "https://apps.apple.com/us/app/truth-or-dare-spicy-games/id6754761517",
+            },
+            {
+                pkg: "com.atharva.expensetracker",
+                title: "Your Money Manager – Spendable",
+                img: "assets/spendable.svg",
+                rating: "4.7",
+                androidUrl:
+                    "https://play.google.com/store/apps/details?id=com.atharva.expensetracker",
+                iosUrl:
+                    "https://apps.apple.com/app/id6449970262",
+                defaultUrl:
+                    "https://play.google.com/store/apps/details?id=com.atharva.expensetracker",
+            },
+            {
+                pkg: "com.asapp.imageconverter",
+                title: "Image Converter: PNG.JPG.HEIC",
+                img: "assets/image-converter.svg",
+                rating: "",
+                androidUrl:
+                    "https://play.google.com/store/apps/details?id=com.asapp.imageconverter",
+                iosUrl:
+                    "https://apps.apple.com/in/app/image-converter-photos-to-pdf/id6752017156",
+                defaultUrl:
+                    "https://play.google.com/store/apps/details?id=com.asapp.imageconverter",
+            },
+            {
+                pkg: "com.atharvasystem.quickscreenrecorder",
+                title: "Qveedo - Screen Recorder App",
+                img: "assets/screen-recorder.svg",
+                rating: "4.4",
+                androidUrl:
+                    "https://play.google.com/store/apps/details?id=com.atharvasystem.quickscreenrecorder",
+                iosUrl:
+                    "https://apps.apple.com/app/screen-recorder-live-stream/id6467652071",
+                defaultUrl:
+                    "https://play.google.com/store/apps/details?id=com.atharvasystem.quickscreenrecorder",
+            },
+            {
+                pkg: "com.app.abillion",
+                title: "Abillion Trade Analytics",
+                img: "assets/abillion-trade.svg",
+                rating: "5.0",
+                androidUrl:
+                    "https://play.google.com/store/apps/details?id=com.app.abillion",
+                iosUrl:
+                    "https://apps.apple.com/app/abillion-trade-analytics/id6464286930",
+                defaultUrl:
+                    "https://play.google.com/store/apps/details?id=com.app.abillion",
+            },
+            {
+                pkg: "com.app.theiptv",
+                title: "IPTV - Smart M3U Player",
+                img: "assets/iptv.svg",
+                rating: "4.6",
+                androidUrl:
+                    "https://play.google.com/store/apps/details?id=com.app.theiptv",
+                iosUrl:
+                    "https://apps.apple.com/app/iptv-your-mobile-tv/id6504405496",
+                defaultUrl:
+                    "https://play.google.com/store/apps/details?id=com.app.theiptv",
+            },
+            {
+                pkg: "com.asapp.texttospeech",
+                title: "Talkify: Text To Speech, Audio",
+                img: "assets/talkify.svg",
+                rating: "5.0",
+                androidUrl:
+                    "https://play.google.com/store/apps/details?id=com.asapp.texttospeech",
+                iosUrl:
+                    "https://apps.apple.com/app/talkify-text-to-speech/id6502435546",
+                defaultUrl:
+                    "https://play.google.com/store/apps/details?id=com.asapp.texttospeech",
+            },
+            {
+                pkg: "com.atharvasystem.todo",
+                title: "DoneZo: To Do List & Calendar",
+                img: "assets/donezo.svg",
+                rating: "5.0",
+                androidUrl:
+                    "https://play.google.com/store/apps/details?id=com.atharvasystem.todo",
+                iosUrl:
+                    "https://apps.apple.com/in/app/donezo-to-do-list-calendar/id6738828343",
+                defaultUrl:
+                    "https://play.google.com/store/apps/details?id=com.atharvasystem.todo",
+            },
+            {
+                pkg: "com.atharva.notesu",
+                title: "Notes.U: ColorNote taking, PDF",
+                img: "assets/notes-u.svg",
+                rating: "4.3",
+                androidUrl:
+                    "https://play.google.com/store/apps/details?id=com.atharva.notesu",
+                iosUrl:
+                    "https://apps.apple.com/app/colored-note-taking-app-notesu/id6740911306",
+                defaultUrl:
+                    "https://play.google.com/store/apps/details?id=com.atharva.notesu",
+            },
+            {
+                pkg: "com.atharvasystem.spinwheel",
+                title: "Spin A Wheel: Raffle Generator",
+                img: "assets/spin_wheel.svg",
+                rating: "5.0",
+                androidUrl:
+                    "https://play.google.com/store/apps/details?id=com.atharvasystem.spinwheel",
+                iosUrl:
+                    "https://apps.apple.com/in/app/spin-wheel-app/id6742394794",
+                defaultUrl:
+                    "https://play.google.com/store/apps/details?id=com.atharvasystem.spinwheel",
+            },
 
-      function renderApps() {
-        const container = document.getElementById("appsList");
-        container.innerHTML = apps
-          .map(
-            (app) => `
+            {
+                pkg: "com.moshocart.atharvasystem",
+                title: "Mosho Cart",
+                img: "assets/mosho-cart.svg",
+                rating: "5.0",
+                androidUrl:
+                    "https://play.google.com/store/apps/details?id=com.moshocart.atharvasystem",
+                iosUrl:
+                    "https://apps.apple.com/app/mosho-cart/id1640443975",
+                defaultUrl:
+                    "https://play.google.com/store/apps/details?id=com.moshocart.atharvasystem",
+            },
+            {
+                pkg: "com.atharvaSystem.odooapp",
+                title: "Mosho Cart Odoo",
+                img: "assets/mosho-cart-odoo.svg",
+                rating: null,
+                androidUrl:
+                    "https://play.google.com/store/apps/details?id=com.atharvaSystem.odooapp",
+                iosUrl:
+                    "https://apps.apple.com/in/app/mosho-cart-odoo/id6470815365",
+                defaultUrl:
+                    "https://play.google.com/store/apps/details?id=com.atharvaSystem.odooapp",
+            },
+            {
+                pkg: "com.atharva.textStory",
+                title: "Fake Text Message & Story App",
+                img: "assets/text-story.svg",
+                rating: "4.3",
+                androidUrl:
+                    "https://play.google.com/store/apps/details?id=com.atharva.textStory",
+                iosUrl:
+                    "https://apps.apple.com/in/app/text-story-social-chat-maker/id6748338402",
+                defaultUrl:
+                    "https://play.google.com/store/apps/details?id=com.atharva.textStory",
+            },
+            
+        ];
+
+        function renderApps() {
+            const container = document.getElementById("appsList");
+            container.innerHTML = apps
+                .map(
+                    (app) => `
             <div class="a-col-6 a-col-md-3 a-col-lg-4 a-col-lg-5col">
-                <a href="https://play.google.com/store/apps/details?id=${
-                  app.pkg
-                }" 
+                <a href="${app.defaultUrl
+                        }" 
                    class="app-card" target="_blank">
                     <div class="card-img">
                         <img src="${app.img}" alt="${app.title}">
                     </div>
                     <h2 class="card-title">${app.title}</h2>
-                    ${
-                      app.rating
-                        ? `
+                    ${app.rating
+                            ? `
                     <p class="card-rating">
                         <span>${app.rating}</span>
                         <img src="assets/star.svg" alt="">
                     </p>`
-                        : ""
-                    }
+                            : ""
+                        }
                 </a>
             </div>
         `
-          )
-          .join("");
-      }
+                )
+                .join("");
+        }
 
-      document.addEventListener("DOMContentLoaded", renderApps);
+        document.addEventListener("DOMContentLoaded", renderApps);
 
-      document.addEventListener("DOMContentLoaded", function () {
-        const userAgent = navigator.userAgent.toLowerCase();
-        const isSafari =
-          /safari/.test(userAgent) &&
-          !/chrome|crios|fxios|edg|opera|opr|android/.test(userAgent);
-        const isIOS =
-          /iphone|ipod|ipad/.test(userAgent) ||
-          (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+        document.addEventListener("DOMContentLoaded", function () {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isSafari =
+                /safari/.test(userAgent) &&
+                !/chrome|crios|fxios|edg|opera|opr|android/.test(userAgent);
+            const isIOS =
+                /iphone|ipod|ipad/.test(userAgent) ||
+                (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
-        console.log("Browser Detection - Safari:", isSafari, "iOS:", isIOS); // Debug line
-        document.querySelectorAll(".app-card").forEach(function (card) {
-          const playStoreLink = card.getAttribute("href");
-          let appStoreLink = playStoreLink; // Default fallback
+            console.log("Browser Detection - Safari:", isSafari, "iOS:", isIOS); // Debug line
+            document.querySelectorAll(".app-card").forEach(function (card) {
+                const playStoreLink = card.getAttribute("href");
+                let appStoreLink = playStoreLink; // Default fallback
 
-          const iosLinks = {
-            "com.app.abillion":
-              "https://apps.apple.com/app/abillion-trade-analytics/id6464286930",
-            "com.atharvasystem.todo":
-              "https://apps.apple.com/in/app/donezo-to-do-list-calendar/id6738828343",
-            "com.atharva.notesu":
-              "https://apps.apple.com/app/colored-note-taking-app-notesu/id6740911306",
-            "com.atharva.expensetracker":
-              "https://apps.apple.com/app/id6449970262",
-            "com.atharvaSystem.odooapp":
-              "https://apps.apple.com/in/app/mosho-cart-odoo/id6470815365",
-            "com.moshocart.atharvasystem":
-              "https://apps.apple.com/app/mosho-cart/id1640443975",
-            "com.atharvasystem.quickscreenrecorder":
-              "https://apps.apple.com/app/screen-recorder-live-stream/id6467652071",
-            "com.asapp.texttospeech":
-              "https://apps.apple.com/app/talkify-text-to-speech/id6502435546",
-            "com.app.theiptv":
-              "https://apps.apple.com/app/iptv-your-mobile-tv/id6504405496",
-            "com.atharvasystem.spinwheel":
-              "https://apps.apple.com/in/app/spin-wheel-app/id6742394794",
-            "com.app.turthordare":
-              "https://apps.apple.com/in/app/truth-or-dare-party-games/id6746148496",
-            "com.atharva.textStory":
-              "https://apps.apple.com/in/app/text-story-social-chat-maker/id6748338402",
-            "com.asapp.imageconverter":
-              "https://apps.apple.com/in/app/image-converter-photos-to-pdf/id6752017156",
-          };
+                const iosLinks = {
+                    "com.app.abillion":
+                        "https://apps.apple.com/app/abillion-trade-analytics/id6464286930",
+                    "com.atharvasystem.todo":
+                        "https://apps.apple.com/in/app/donezo-to-do-list-calendar/id6738828343",
+                    "com.atharva.notesu":
+                        "https://apps.apple.com/app/colored-note-taking-app-notesu/id6740911306",
+                    "com.atharva.expensetracker":
+                        "https://apps.apple.com/app/id6449970262",
+                    "com.atharvaSystem.odooapp":
+                        "https://apps.apple.com/in/app/mosho-cart-odoo/id6470815365",
+                    "com.moshocart.atharvasystem":
+                        "https://apps.apple.com/app/mosho-cart/id1640443975",
+                    "com.atharvasystem.quickscreenrecorder":
+                        "https://apps.apple.com/app/screen-recorder-live-stream/id6467652071",
+                    "com.asapp.texttospeech":
+                        "https://apps.apple.com/app/talkify-text-to-speech/id6502435546",
+                    "com.app.theiptv":
+                        "https://apps.apple.com/app/iptv-your-mobile-tv/id6504405496",
+                    "com.atharvasystem.spinwheel":
+                        "https://apps.apple.com/in/app/spin-wheel-app/id6742394794",
+                    "com.app.turthordare":
+                        "https://apps.apple.com/in/app/truth-or-dare-party-games/id6746148496",
+                    "com.atharva.textStory":
+                        "https://apps.apple.com/in/app/text-story-social-chat-maker/id6748338402",
+                    "com.asapp.imageconverter":
+                        "https://apps.apple.com/in/app/image-converter-photos-to-pdf/id6752017156",
+                    "com.app.turthordare.pro":
+                        "https://apps.apple.com/us/app/truth-or-dare-spicy-games/id6754761517",
+                };
 
-          // More robust package name extraction
-          const packageName = (playStoreLink.match(/id=([a-zA-Z0-9._]+)/) ||
-            [])[1];
+                // More robust package name extraction
+                const packageName = (playStoreLink.match(/id=([a-zA-Z0-9._]+)/) ||
+                    [])[1];
 
-          if (packageName && iosLinks[packageName]) {
-            appStoreLink = iosLinks[packageName];
-            console.log("Redirecting to App Store:", appStoreLink); // Debug
-          }
+                if (packageName && iosLinks[packageName]) {
+                    appStoreLink = iosLinks[packageName];
+                    console.log("Redirecting to App Store:", appStoreLink); // Debug
+                }
 
-          card.setAttribute(
-            "href",
-            isIOS || isSafari ? appStoreLink : playStoreLink
-          );
+                card.setAttribute(
+                    "href",
+                    isIOS || isSafari ? appStoreLink : playStoreLink
+                );
+            });
         });
-      });
     </script>
 
     <header class="header">
-      <div class="header-content">
-        <img src="assets/atharva-logo.svg" alt="Atharva System" />
-        <h3 class="heading">Our Apps</h3>
-        <p class="subtitle">We have developed apps to serve different needs.</p>
-        <img
-          src="assets/head-rounded-mobile.svg"
-          alt=""
-          class="head-rounded-mobile"
-        />
-        <img src="assets/head-rounded.svg" alt="" class="head-rounded" />
-      </div>
+        <div class="header-content">
+            <img src="assets/atharva-logo.svg" alt="Atharva System" />
+            <h3 class="heading">Our Apps</h3>
+            <p class="subtitle">We have developed apps to serve different needs.</p>
+            <img src="assets/head-rounded-mobile.svg" alt="" class="head-rounded-mobile" />
+            <img src="assets/head-rounded.svg" alt="" class="head-rounded" />
+        </div>
     </header>
     <section class="apps-group">
-      <div class="a-container">
-        <div class="a-row" id="appsList">
-          <!-- Apps will be injected here -->
+        <div class="a-container">
+            <div class="a-row" id="appsList">
+                <!-- Apps will be injected here -->
+            </div>
         </div>
-      </div>
     </section>
-  </body>
+</body>
+
 </html>
