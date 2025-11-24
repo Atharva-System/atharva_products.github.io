@@ -27,58 +27,44 @@
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-
-            // ---- PLATFORM DETECTION ----
-            const ua = navigator.userAgent.toLowerCase();
-
-            const isIOS =
-                /iphone|ipad|ipod/.test(ua) ||
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isSafari = /safari/.test(userAgent) &&
+                !/chrome|crios|fxios|edg|opera|opr|android/.test(userAgent);
+            const isIOS = /iphone|ipod|ipad/.test(userAgent) ||
                 (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
-            const isSafari =
-                /safari/.test(ua) &&
-                !/chrome|crios|fxios|edg|opr|android/.test(ua);
+            console.log("Browser Detection - Safari:", isSafari, "iOS:", isIOS); // Debug line
 
-            console.log("Safari:", isSafari, "iOS:", isIOS);
-
-            // ---- iOS APP LINKS ----
-            const iosLinks = {
-                "com.app.abillion": "https://apps.apple.com/app/abillion-trade-analytics/id6464286930",
-                "com.atharvasystem.todo": "https://apps.apple.com/us/app/donezo-to-do-list-calendar/id6738828343",
-                "com.atharva.notesu": "https://apps.apple.com/app/colored-note-taking-app-notesu/id6740911306",
-                "com.atharva.expensetracker": "https://apps.apple.com/app/id6449970262",
-                "com.atharvaSystem.odooapp": "https://apps.apple.com/us/app/mosho-cart-odoo/id6470815365",
-                "com.moshocart.atharvasystem": "https://apps.apple.com/app/mosho-cart/id1640443975",
-                "com.atharvasystem.quickscreenrecorder": "https://apps.apple.com/app/screen-recorder-live-stream/id6467652071",
-                "com.asapp.texttospeech": "https://apps.apple.com/app/talkify-text-to-speech/id6502435546",
-                "com.app.theiptv": "https://apps.apple.com/app/iptv-your-mobile-tv/id6504405496",
-                "com.atharvasystem.spinwheel": "https://apps.apple.com/us/app/spin-wheel-app/id6742394794",
-                "com.app.turthordare": "https://apps.apple.com/us/app/truth-or-dare-party-games/id6746148496",
-                "com.atharva.textStory": "https://apps.apple.com/in/app/text-story-social-chat-maker/id6748338402",
-                "com.asapp.imageconverter": "https://apps.apple.com/sa/app/image-converter-photos-to-pdf/id6752017156"
-            };
-
-            // ---- UPDATE LINKS ----
-            document.querySelectorAll(".app-card").forEach(card => {
-
+            document.querySelectorAll(".app-card").forEach(function (card) {
                 const playStoreLink = card.getAttribute("href");
+                let appStoreLink = playStoreLink; // Default fallback
 
-                // Extract Play Store package name
+                const iosLinks = {
+                    "com.app.abillion": "https://apps.apple.com/app/abillion-trade-analytics/id6464286930",
+                    "com.atharvasystem.todo": "https://apps.apple.com/in/app/donezo-to-do-list-calendar/id6738828343",
+                    "com.atharva.notesu": "https://apps.apple.com/app/colored-note-taking-app-notesu/id6740911306",
+                    "com.atharva.expensetracker": "https://apps.apple.com/app/id6449970262",
+                    "com.atharvaSystem.odooapp": "https://apps.apple.com/in/app/mosho-cart-odoo/id6470815365",
+                    "com.moshocart.atharvasystem": "https://apps.apple.com/app/mosho-cart/id1640443975",
+                    "com.atharvasystem.quickscreenrecorder": "https://apps.apple.com/app/screen-recorder-live-stream/id6467652071",
+                    "com.asapp.texttospeech": "https://apps.apple.com/app/talkify-text-to-speech/id6502435546",
+                    "com.app.theiptv": "https://apps.apple.com/app/iptv-your-mobile-tv/id6504405496",
+                    "com.atharvasystem.spinwheel": "https://apps.apple.com/in/app/spin-wheel-app/id6742394794",
+                    "com.app.turthordare": "https://apps.apple.com/in/app/truth-or-dare-party-games/id6746148496",
+                    "com.atharva.textStory": "https://apps.apple.com/in/app/text-story-social-chat-maker/id6748338402",
+                    "com.asapp.imageconverter": "https://apps.apple.com/in/app/image-converter-photos-to-pdf/id6752017156",
+                };
+
+                // More robust package name extraction
                 const packageName = (playStoreLink.match(/id=([a-zA-Z0-9._]+)/) || [])[1];
+                if (packageName && iosLinks[packageName]) {
+                    appStoreLink = iosLinks[packageName];
+                    console.log("Redirecting to App Store:", appStoreLink); // Debug
+                }
 
-                // If iOS link available → use it, otherwise fallback to original Play Store link
-                const appStoreLink = iosLinks[packageName] || playStoreLink;
-
-                // Final redirect logic
-                const finalLink = (isIOS || isSafari) ? appStoreLink : playStoreLink;
-
-                console.log("Final Link:", finalLink);
-
-                card.setAttribute("href", finalLink);
+                card.setAttribute("href", (isIOS || isSafari) ? appStoreLink : playStoreLink);
             });
-
         });
-
     </script>
     <script>
         const apps = [
