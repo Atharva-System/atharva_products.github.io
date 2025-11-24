@@ -27,13 +27,16 @@
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const userAgent = navigator.userAgent.toLowerCase();
-            const isSafari = /safari/.test(userAgent) &&
-                !/chrome|crios|fxios|edg|opera|opr|android/.test(userAgent);
-            const isIOS = /iphone|ipod|ipad/.test(userAgent) ||
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+            const isAndroid = /android/i.test(userAgent);
+
+            const isIOS = /iPhone|iPod/.test(userAgent) ||
                 (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
+
             console.log("Browser Detection - Safari:", isSafari, "iOS:", isIOS); // Debug line
+
 
             document.querySelectorAll(".app-card").forEach(function (card) {
                 const playStoreLink = card.getAttribute("href");
@@ -57,12 +60,16 @@
 
                 // More robust package name extraction
                 const packageName = (playStoreLink.match(/id=([a-zA-Z0-9._]+)/) || [])[1];
-                if (packageName && iosLinks[packageName]) {
-                    appStoreLink = iosLinks[packageName];
+                const packageNameMatch = playStoreLink.match(/id=([^&]+)/);
+
+                if (packageNameMatch) {
+                    const packageName = packageNameMatch[1];
+                    appStoreLink = iosLinks[packageName] || playStoreLink; // Default to Android link if iOS link not found
                     console.log("Redirecting to App Store:", appStoreLink); // Debug
                 }
 
-                card.setAttribute("href", (isIOS || isSafari) ? appStoreLink : playStoreLink);
+                card.setAttribute("href", isIOS || isSafari ? appStoreLink : playStoreLink);
+
             });
         });
     </script>
